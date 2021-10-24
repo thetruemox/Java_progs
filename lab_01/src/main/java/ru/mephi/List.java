@@ -1,6 +1,14 @@
 package ru.mephi;
 
 public class List {
+    private int calcNewCapacity() {
+        return this.listCapacity + (int)Math.floor(this.listCapacity * 0.3);
+    }
+
+    private Object[] arr;
+    private int listCapacity;
+    private int lastIndex;
+
     public List() {
         this.listCapacity = 10;
         this.lastIndex = 0;
@@ -92,12 +100,6 @@ public class List {
         }
     }
 
-    private int calcNewCapacity() {
-        return this.listCapacity + (int)Math.floor(this.listCapacity * 0.3);
-    }
 
-    private Object[] arr;
-    private int listCapacity;
-    private int lastIndex;
 }
 

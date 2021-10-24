@@ -1,4 +1,31 @@
 package ru.mephi;
+import java.awt.*;
+import java.lang.reflect.Array;
+import java.util.LinkedHashMap;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
+        Scanner scanner = new Scanner(System.in);
+        String name;
+
+        while (scanner.hasNext())
+        {
+            name = scanner.next();
+            map.put(name, map.getOrDefault(name, 0) + 1);
+        }
+
+        System.out.println(map);
+
+
+    }
+}
+
+
+/*
+
 
 public class Main {
     public static void main(String[] args) {
@@ -12,3 +39,4 @@ public class Main {
         System.out.println(map.get("agabatY"));
     }
 }
+*/

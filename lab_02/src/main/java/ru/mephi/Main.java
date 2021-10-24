@@ -10,12 +10,8 @@ public class Main {
 
         List newList = List.merge(list1, list2);
 
-        System.out.println(newList.get(100));
-
         for (int i = 0; i < newList.size(); i++) {
             System.out.println(newList.get(i));
         }
-
-
     }
 }
