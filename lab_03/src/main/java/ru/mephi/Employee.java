@@ -1,6 +1,8 @@
 package ru.mephi;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 enum Gender {
     MALE, FEMALE;
@@ -233,10 +235,18 @@ public class Employee {
 
     public static void paySalary(Employee emp) {
         double money = 300;
-        System.out.println(money + " $ paid to " + emp.surName + " " + emp.givenName);
+        Consumer<Employee> employeeConsumer = t ->
+                System.out.println(money + " $ paid to " + emp.getGivenName() + " " + emp.getSurName());
+
+        employeeConsumer.accept(emp);
+        //System.out.println(money + " $ paid to " + emp.surName + " " + emp.givenName);
     }
     public static void payPremium(Employee emp) {
         double money = 300 * emp.role.getPercent();
-        System.out.println(money + " $ paid to " + emp.surName + " " + emp.givenName);
+        Consumer<Employee> employeeConsumer = t ->
+                System.out.println(money + " $ paid to " + emp.getGivenName() + " " + emp.getSurName());
+
+        employeeConsumer.accept(emp);
+        //System.out.println(money + " $ paid to " + emp.surName + " " + emp.givenName);
     }
 }
