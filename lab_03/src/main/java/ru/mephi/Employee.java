@@ -1,4 +1,5 @@
 package ru.mephi;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -39,41 +40,52 @@ public class Employee {
     public String getGivenName() {
         return this.givenName;
     }
+
     public String getSurName() {
         return this.surName;
     }
+
     public int getAge() {
         return this.age;
     }
+
     public Gender getGender() {
         return this.gender;
     }
+
     public Role getRole() {
         return this.role;
     }
+
     public String getDept() {
         return this.dept;
     }
+
     public String getEMail() {
         return this.eMail;
     }
+
     public String getPhone() {
         return this.phone;
     }
+
     public String getAdress() {
         return this.adress;
     }
+
     public String getCity() {
         return this.city;
     }
+
     public String getState() {
         return this.state;
     }
+
     public String getCode() {
         return this.code;
     }
 
-    private Employee(){
+    private Employee() {
     }
 
     @Override
@@ -106,46 +118,57 @@ public class Employee {
             this.givenName = givenName;
             return this;
         }
+
         public Builder setSurName(String surName) {
             this.surName = surName;
             return this;
         }
+
         public Builder setAge(int age) {
             this.age = age;
             return this;
         }
+
         public Builder setGender(Gender gender) {
             this.gender = gender;
             return this;
         }
+
         public Builder setRole(Role role) {
             this.role = role;
             return this;
         }
+
         public Builder setDept(String dept) {
             this.dept = dept;
             return this;
         }
+
         public Builder setEMail(String eMail) {
             this.eMail = eMail;
             return this;
         }
+
         public Builder setPhone(String phone) {
             this.phone = phone;
             return this;
         }
+
         public Builder setAdress(String adress) {
             this.adress = adress;
             return this;
         }
+
         public Builder setCity(String city) {
             this.city = city;
             return this;
         }
+
         public Builder setState(String state) {
             this.state = state;
             return this;
         }
+
         public Builder setCode(String code) {
             this.code = code;
             return this;
@@ -241,6 +264,7 @@ public class Employee {
         employeeConsumer.accept(emp);
         //System.out.println(money + " $ paid to " + emp.surName + " " + emp.givenName);
     }
+
     public static void payPremium(Employee emp) {
         double money = 300 * emp.role.getPercent();
         Consumer<Employee> employeeConsumer = t ->
