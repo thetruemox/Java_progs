@@ -23,9 +23,16 @@ public class Main {
         bDate = LocalDate.of(1976, 7, 19);
         out.println(bDate.isLeapYear());
         out.println(bDate.lengthOfYear());
-        out.println((bDate.datesUntil(now)).count() / 10);
-        bDate.plusYears(21);
+        out.println(ChronoUnit.DECADES.between(bDate, now));
+        bDate = bDate.plusYears(21);
         out.println(bDate.getDayOfWeek());
+
+        out.println("\nTrain: Boston to New York");
+        LocalTime tr_dep = LocalTime.of(1,45);
+        LocalTime tr_arr = LocalTime.of(7,25);
+        LocalTime tr_ride = tr_arr.minusHours(tr_dep.getHour()).minusMinutes(tr_dep.getMinute());
+        out.println(tr_ride);
+        out.println(tr_dep.plusHours(tr_ride.getHour() + 1).plusMinutes(tr_ride.getMinute() + 19));
 
         out.println("\nFlight: Boston to Miami");
         LocalDateTime start;
@@ -44,7 +51,7 @@ public class Main {
         long allDays = ChronoUnit.DAYS.between(semStarts.with(secondTuesday), semEnds);
         allDays /= 7;
         allDays *= 5;
-        allDays -= 10;
+        allDays -= 20;
         out.println(allDays);
 
         out.println("\nFlight 123, San Francisco to  Boston");

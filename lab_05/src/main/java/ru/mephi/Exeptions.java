@@ -27,8 +27,10 @@ public class Exeptions {
         };
 
         try {
-            Scanner inputFile = new Scanner(new File("file.txt"));
-            inputFile.close();
+            FileWriter fw = new FileWriter("file.txt", true);
+            fw.write("smth");
+            fw.close();
+            fw.write("smth2");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         };
@@ -47,7 +49,7 @@ public class Exeptions {
         };
 
         //StackOverflowError
-        Exeptions.recursivePrint(1);
+        //Exeptions.recursivePrint(1);
 
         //OutOfMemoryError
         /*

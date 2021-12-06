@@ -36,6 +36,7 @@ public class Employee {
     private String city;
     private String state;
     private String code;
+    private int salary;
 
     public String getGivenName() {
         return this.givenName;
@@ -85,6 +86,14 @@ public class Employee {
         return this.code;
     }
 
+    public int getSalary() {
+        return this.salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
     private Employee() {
     }
 
@@ -113,6 +122,7 @@ public class Employee {
         private String city;
         private String state;
         private String code;
+        private int salary;
 
         public Builder setGivenName(String givenName) {
             this.givenName = givenName;
@@ -174,6 +184,11 @@ public class Employee {
             return this;
         }
 
+        public Builder setSalary(int salary) {
+            this.salary = salary;
+            return this;
+        }
+
         public Employee build() {
             Employee employee = new Employee();
             employee.givenName = this.givenName;
@@ -188,6 +203,7 @@ public class Employee {
             employee.city = this.city;
             employee.state = this.state;
             employee.code = this.code;
+            employee.salary = this.salary;
             return employee;
         }
 
@@ -203,6 +219,7 @@ public class Employee {
                 .setGender(Gender.FEMALE)
                 .setRole(Role.MANAGER)
                 .setDept("Ain")
+                .setSalary(120)
                 .build());
         list.add(new Builder()
                 .setGivenName("Gustav")
@@ -211,6 +228,7 @@ public class Employee {
                 .setGender(Gender.MALE)
                 .setRole(Role.EXECUTIVE)
                 .setDept("Aisne")
+                .setSalary(220)
                 .build());
         list.add(new Builder()
                 .setGivenName("Ivan")
@@ -219,6 +237,7 @@ public class Employee {
                 .setGender(Gender.MALE)
                 .setRole(Role.STAFF)
                 .setDept("Aisne")
+                .setSalary(99)
                 .build());
         list.add(new Builder()
                 .setGivenName("Olga")
@@ -227,6 +246,7 @@ public class Employee {
                 .setGender(Gender.FEMALE)
                 .setRole(Role.STAFF)
                 .setDept("Allier")
+                .setSalary(520)
                 .build());
         list.add(new Builder()
                 .setGivenName("Alexander")
@@ -235,6 +255,7 @@ public class Employee {
                 .setGender(Gender.MALE)
                 .setRole(Role.EXECUTIVE)
                 .setDept("Ain")
+                .setSalary(404)
                 .build());
         list.add(new Builder()
                 .setGivenName("Wilhelm")
@@ -243,6 +264,7 @@ public class Employee {
                 .setGender(Gender.MALE)
                 .setRole(Role.MANAGER)
                 .setDept("Cher")
+                .setSalary(322)
                 .build());
         list.add(new Builder()
                 .setGivenName("Siemowit")
@@ -251,6 +273,7 @@ public class Employee {
                 .setGender(Gender.MALE)
                 .setRole(Role.STAFF)
                 .setDept("Cher")
+                .setSalary(488)
                 .build());
 
         return list;
