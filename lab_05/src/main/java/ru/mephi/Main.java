@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         LocalDate now, bDate, dDate;
         now = LocalDate.now();
-
+/*
         out.println("Abe Lincoln");
         bDate = LocalDate.of(1809, 2, 12);
         dDate = LocalDate.of(1855, 4, 15);
@@ -26,14 +26,14 @@ public class Main {
         out.println(ChronoUnit.DECADES.between(bDate, now));
         bDate = bDate.plusYears(21);
         out.println(bDate.getDayOfWeek());
-
+*/
         out.println("\nTrain: Boston to New York");
         LocalTime tr_dep = LocalTime.of(1,45);
         LocalTime tr_arr = LocalTime.of(7,25);
         LocalTime tr_ride = tr_arr.minusHours(tr_dep.getHour()).minusMinutes(tr_dep.getMinute());
         out.println(tr_ride);
         out.println(tr_dep.plusHours(tr_ride.getHour() + 1).plusMinutes(tr_ride.getMinute() + 19));
-
+/*
         out.println("\nFlight: Boston to Miami");
         LocalDateTime start;
         LocalTime flight;
@@ -78,5 +78,6 @@ public class Main {
         sanFrancTime = ZonedDateTime.of(start, ZoneId.of("America/Los_Angeles"));
         arrival = ZonedDateTime.of(start.plusHours(flight.getHour()).plusMinutes(flight.getMinute()), ZoneId.of("America/Los_Angeles"));
         out.println(arrival.withZoneSameInstant(ZoneId.of("America/New_York")));
+ */
     }
 }

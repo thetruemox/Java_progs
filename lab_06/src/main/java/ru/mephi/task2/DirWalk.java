@@ -23,7 +23,7 @@ public class DirWalk {
 
         System.out.println("\n=== Dir build ===");
         files
-            .filter(path -> path.toString().contains("build"))
+            .filter(path -> path.toString().contains("resources"))
             .forEach(line -> System.out.println(line));  
 
     }catch (IOException e){

@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Stream;
 
 public class P04NioReadAll {
@@ -16,8 +17,8 @@ public class P04NioReadAll {
         System.out.println("\n=== Lord Count ===");
         long wordCount = lines
                 .flatMap(line -> Stream.of(line.split(" ")))
-                .filter(word -> word.contains("lord"))
-                .peek(s -> System.out.println("Match: " + s))
+                .filter(word -> word.toLowerCase(Locale.ROOT).contains("lord"))
+                //.peek(s -> System.out.println("Match: " + s))
                 .count();
 
         System.out.println("Word count: " + wordCount);
@@ -27,8 +28,8 @@ public class P04NioReadAll {
         System.out.println("\n=== Prison Count ===");
         wordCount = lines
                 .flatMap(line -> Stream.of(line.split(" ")))
-                .filter(word -> word.contains("rison"))
-                .peek(s -> System.out.println("Match: " + s))
+                .filter(word -> word.toLowerCase(Locale.ROOT).contains("prison"))
+                //.peek(s -> System.out.println("Match: " + s))
                 .count();
         
         System.out.println("Word count: " + wordCount);            

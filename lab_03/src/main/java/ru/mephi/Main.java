@@ -104,7 +104,7 @@ public class Main {
                 .average();
         System.out.println(dbl_num);
 
-        System.out.println("================average================");
+        System.out.println("================sum================");
 
         int sum = pl.stream()
                 .mapToInt(Employee::getSalary)
